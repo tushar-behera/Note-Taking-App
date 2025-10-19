@@ -12,8 +12,8 @@ services:
       - db-data:/var/lib/postgresql/data
       - ./backend/docker/initdb:/docker-entrypoint-initdb.d:ro
     # For security, avoid exposing Postgres to the public host unless you need it
-    # ports:
-    #   - "${POSTGRES_HOST_PORT:-5432}:5432"
+    ports:
+      - ${POSTGRES_HOST_PORT:-5432}:5432
 
   backend:
     build:
@@ -22,12 +22,12 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: ${NODE_ENV:-production}
-      DATABASE_URL: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}"
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
       PORT: ${BACKEND_PORT:-4000}
     depends_on:
       - db
     ports:
-      - "${HOST_BACKEND_PORT:-4000}:4000"
+      - ${HOST_BACKEND_PORT:-4000}:4000
 
   frontend:
     build:
@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - "${HOST_FRONTEND_PORT:-80}:80"
+      - ${HOST_FRONTEND_PORT:-80}:80
     depends_on:
       - backend
 
