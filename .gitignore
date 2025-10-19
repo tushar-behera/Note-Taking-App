@@ -1,0 +1,39 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Build / output
+dist/
+build/
+frontend/dist/
+
+# Logs
+npm-debug.log*
+*.log
+logs/
+
+# Environment
+.env
+.env.*
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+
+
+# Database files
+*.sqlite
+*.db
+
+# Coverage
+coverage/
+
+# Misc
+.cache/
+*.tgz
