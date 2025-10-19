@@ -15,7 +15,9 @@ export default function NoteEditor({ note, onSave }) {
   }, [note]);
 
   const handleSave = () => {
-    onSave({ ...note, title, content });
+    const payload = { title, content };
+    if (note && note.id) payload.id = note.id;
+    onSave(payload);
   };
 
   return (
