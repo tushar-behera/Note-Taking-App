@@ -55,7 +55,7 @@ export default function App() {
             </h1>
             <button
               onClick={() => setActiveNote(null)}
-              className="bg-sky-500 hover:bg-sky-600 text-black px-3 py-1 rounded text-sm font-semibold"
+              className="bg-sky-500 hover:bg-sky-600 text-white px-3 py-1 rounded text-sm font-semibold"
             >
               + New
             </button>

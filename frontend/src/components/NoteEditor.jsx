@@ -39,7 +39,7 @@ export default function NoteEditor({ note, onSave }) {
       <div className="mt-4 flex justify-end">
         <button
           onClick={handleSave}
-          className="bg-white hover:bg-white/95 text-black py-2 px-5 rounded font-semibold shadow-sm"
+          className="bg-sky-500 hover:bg-sky-600 text-white py-2 px-5 rounded font-semibold shadow-sm"
         >
           Save Note
         </button>
